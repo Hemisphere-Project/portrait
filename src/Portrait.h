@@ -16,7 +16,6 @@
 
 #define IMG_WIDTH 120 //in pixels
 
-#define MAX_COUNT 100 // on every 10 sec at 10 fps
 
 class Portrait {
     
