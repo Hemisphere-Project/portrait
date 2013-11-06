@@ -12,9 +12,9 @@
 #include "ofMain.h"
 #include "ofxThreadedImageLoader.h"
 
-#define IMG_STACK_LENGHT 20 // must be more than 2
+#define IMG_STACK_LENGHT 60 // must be more than 2
 
-#define IMG_WIDTH 60 //in pixels
+#define IMG_WIDTH 120 //in pixels
 
 #define MAX_COUNT 100 // on every 10 sec at 10 fps
 
@@ -26,10 +26,11 @@ public:
     
     // methods
     void update();
-    void onDrawEvent(ofEventArgs& eventArgs);
     void draw();
+    bool isStackFull();
     
     void urlResponse(ofHttpResponse & response);
+    void loadFirst();
     void load();
     void exit();
     
@@ -44,6 +45,8 @@ public:
     float h;
     
     ofImage img[IMG_STACK_LENGHT];
+    
+    ofImage tmpImg;
     
     int imgIndex;
     
